@@ -1,5 +1,5 @@
 import telebot
-bot=telebot.Telebot("354151340:AAEnLGjyv9CEl1TAwNkimzOCVsyI-P_2oZM")
+bot=telebot.TeleBot("354151340:AAEnLGjyv9CEl1TAwNkimzOCVsyI-P_2oZM")
 f = open('text.txt')
 keys={}
 for line in f:
