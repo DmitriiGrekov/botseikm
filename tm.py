@@ -1,6 +1,6 @@
 import telebot
 bot=telebot.TeleBot("354151340:AAEnLGjyv9CEl1TAwNkimzOCVsyI-P_2oZM")
-f = open('text.txt',"rb",encoding = "ISO-8859-1")
+f = open('text.txt',"rb")
 keys={}
 for line in f:
     arr=line.split("$$")
