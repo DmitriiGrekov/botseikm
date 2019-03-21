@@ -12,6 +12,7 @@ def send_message2(message):
 
 @bot.message_handler(content_types=["text"])
 def mes_handler(message):
+    global keys
     for i in keys.keys():
         questions=message.chat.id
         if questions == i:
