@@ -1,6 +1,6 @@
 import telebot
 bot=telebot.TeleBot("354151340:AAEnLGjyv9CEl1TAwNkimzOCVsyI-P_2oZM")
-f = open('text.txt',"rb")
+f = open('text.txt','r')
 keys={}
 for line in f:
     arr=line.split("$$")
@@ -16,7 +16,7 @@ def mes_handler(message):
     for i in keys.keys():
         questions=message.chat.id
         if questions == i:
-            bot.send_message(message.chat.id,"Ваш ответ - "+ keys[i])
+            bot.send_message(message.chat.id,"Ваш ответ - %s"%( keys[i]))
         else:
             bot.send_message(message.chat.id,'Вопрос не найден')
             
