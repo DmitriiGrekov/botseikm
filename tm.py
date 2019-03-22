@@ -1,10 +1,6 @@
 import telebot
 bot=telebot.TeleBot("354151340:AAEnLGjyv9CEl1TAwNkimzOCVsyI-P_2oZM")
-f = open('text.txt','r',encoding='latin-1')
-keys={}
-for line in f:
-    arr=line.split("$$")
-    keys[arr[0]]=arr[-1]
+
     
 @bot.message_handler(commands=["start"])
 def send_message2(message):
@@ -12,8 +8,11 @@ def send_message2(message):
 
 @bot.message_handler(content_types=["text"])
 def mes_handler(message):
-    global keys
-    for i in keys.keys():
+    with open('out.txt','rb') as inp:
+        d_in = pickle.load(inp)
+    print(d_in)
+
+    for i in d_in.keys():
         questions=message.chat.id
         if questions == i:
             bot.send_message(message.chat.id,"Ваш ответ - %s"%( keys[i]))
