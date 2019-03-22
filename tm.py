@@ -5,7 +5,7 @@ TOKEN = '354151340:AAEnLGjyv9CEl1TAwNkimzOCVsyI-P_2oZM' # токен вашег�
 data = {'offset': offset  , 'limit': 0, 'timeout': 0}
 
 try: # обрабатываем исключения
-    request = requests.post(URL  TOKEN  '/getUpdates', data=data) # собственно сам запрос
+    request = requests.post(URL + TOKEN + '/getUpdates', data=data) # собственно сам запрос
 except:
     print('Error getting updates')
     return False
