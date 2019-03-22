@@ -2,7 +2,7 @@ import request
 offset = 0 # параметр необходим для подтверждения обновления
 URL = 'https://api.telegram.org/bot' # URL на который отправляется запрос
 TOKEN = '354151340:AAEnLGjyv9CEl1TAwNkimzOCVsyI-P_2oZM' # токен вашего бота, полученный от @BotFather
-data = {'offset': offset  1, 'limit': 0, 'timeout': 0}
+data = {'offset': offset  , 'limit': 0, 'timeout': 0}
 
 try: # обрабатываем исключения
     request = requests.post(URL  TOKEN  '/getUpdates', data=data) # собственно сам запрос
