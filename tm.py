@@ -10,7 +10,7 @@ def repeat_allconn_messages(message): # Название функции не и�
     conn = sqlite3.connect("mydatabase.db")
     cursor = conn.cursor()
     sql = "SELECT * FROM albums WHERE question=?"
-    for row in cursor.execute(sql,([message.text.upper()])):
+    for row in cursor.execute(sql,([message.text.lower()])):
             bot.send_message(message.chat.id,"Ваш ответ - "+row[-1])
     
     bot.send_message(message.chat.id,"Введите вопрос. ")
