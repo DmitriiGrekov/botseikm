@@ -1,10 +1,13 @@
 import sqlite3
 questions={}
 
-f = open('text.txt')
+f = open('text.txt','r')
 for line in f:
+    
     arr=line.split("$$")
-    questions[arr[0]]=arr[1]
+    
+    questions[arr[0]]=arr[-1]
+    
 
 print(questions)
  
