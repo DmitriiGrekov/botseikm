@@ -8,4 +8,5 @@ def get_anser(tex):
         sql = "SELECT * FROM albums WHERE question=?"
         for row in cursor.execute(sql,([tex])):
                 return row[-1]
-print(get_anser("Как меня зовут?"))
+qs=input()
+print(get_anser(qs))

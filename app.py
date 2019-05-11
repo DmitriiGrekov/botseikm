@@ -1,7 +1,7 @@
 import sqlite3
 questions={}
 
-f = open('text.txt','r')
+f = open('eikm_testy.txt','r')
 for line in f:
     
     arr=line.split("$$")
@@ -15,10 +15,7 @@ conn = sqlite3.connect("mydatabase.db") # или :memory: чтобы сохра�
 cursor = conn.cursor()
  
 # Создание таблицы
-cursor.execute("""CREATE TABLE albums
-                  (question text, answer text)
-               """)
 for j in questions.keys():
     cursor.execute("INSERT INTO albums VALUES (?,?)", [j, questions[j]])
-
+print("Добавлено")
 conn.commit()
